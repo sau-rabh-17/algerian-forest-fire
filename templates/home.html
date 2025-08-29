@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Prediction Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">ML Prediction</h1>
+    <p class="text-center">Main Input For Receiving Query to our ML</p>
+    
+    <form action="{{url_for('predict')}}" method="POST" class="mx-auto" style="max-width: 500px;">
+      <input type="text" name="Temperature" placeholder="Temperature" class="form-control mb-2" required>
+      <input type="text" name="RH" placeholder="RH" class="form-control mb-2" required>
+      <input type="text" name="Ws" placeholder="Ws" class="form-control mb-2" required>
+      <input type="text" name="Rainfall" placeholder="Rainfall" class="form-control mb-2" required>
+      <input type="text" name="DWC" placeholder="DWC" class="form-control mb-2" required>
+      <input type="text" name="FFMC" placeholder="FFMC" class="form-control mb-2" required>
+      <input type="text" name="ISI" placeholder="ISI" class="form-control mb-2" required>
+      <input type="text" name="Classes" placeholder="Classes" class="form-control mb-2" required>
+      <input type="text" name="Region" placeholder="Region" class="form-control mb-3" required>
+      
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Predict</button>
+    </form>
+    <h2 class="text-center">
+        <br>
+     Prediction Result is {{results}}
+    </h2>
+  </div>
+</body>
+</html>
